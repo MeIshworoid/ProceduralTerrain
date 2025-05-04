@@ -344,7 +344,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e7b29ade6d7eae47ad4808d5ce015e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drawMode: 1
+  drawMode: 2
   mapWidth: 100
   mapHeight: 100
   noiseScale: 109.07
@@ -354,6 +354,8 @@ MonoBehaviour:
   seed: 100
   offset: {x: 4.3, y: -0.06}
   autoUpdate: 1
+  fallOffStart: 0
+  fallOffEnd: 0
   regions:
   - name: Water
     height: 0.4
@@ -486,7 +488,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!64 &1298188506
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -558,7 +560,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298188505}
-  m_Mesh: {fileID: 1662887506}
+  m_Mesh: {fileID: 1525386195}
 --- !u!4 &1298188509
 Transform:
   m_ObjectHideFlags: 0
@@ -574,7 +576,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!43 &1662887506
+--- !u!43 &1525386195
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

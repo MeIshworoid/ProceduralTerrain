@@ -6,10 +6,10 @@ public class MapGenerator : MonoBehaviour
 {
     public enum DrawMode
     {
-        NoiseMap = 0,
-        Mesh = 1,
-        FallOffMap = 2,
-        ColorMap = 3
+        NoiseMap,
+        ColorMap,
+        Mesh,
+        FallOffMap
     }
 
     public DrawMode drawMode;
@@ -27,6 +27,10 @@ public class MapGenerator : MonoBehaviour
     public Vector2 offset;
 
     public bool autoUpdate;
+
+    public const int mapChunkSize = 241;
+    public float fallOffStart;
+    public float fallOffEnd;
 
     public TerrainType[] regions;
 
@@ -65,6 +69,10 @@ public class MapGenerator : MonoBehaviour
         else if (drawMode == DrawMode.Mesh)
         {
             display.DrawMesh(MeshGenerator.GenerateTerrainMesh(noiseMap), TextureGenerator.TextureFromColorMap(colorMap, mapWidth, mapHeight));
+        }
+        else if (drawMode == DrawMode.FallOffMap)
+        {
+            display.DrawTexture(TextureGenerator.TextureFromHeightMap(FallOffGenerator.GenerateFalloffMap(mapChunkSize, fallOffStart, fallOffEnd)));
         }
 
     }
